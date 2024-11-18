@@ -92,8 +92,9 @@ print("\nParameter model:")
 print(loaded_model.get_params())
 
 # Contoh prediksi dengan data baru
-data_baru = pd.DataFrame([[2015, 20000000, 15000000, 20, 30]], columns=numeric_columns)
+data_baru = pd.DataFrame([[2009, 37500000, 132000000, 25, 32]], columns=numeric_columns)
 prediksi = loaded_model.predict(data_baru)
 
 print("\nHasil prediksi untuk data baru:")
 print(prediksi)
+

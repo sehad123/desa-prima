@@ -1,0 +1,32 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql" // Sesuaikan jika menggunakan provider lain seperti PostgreSQL
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       Int    @id @default(autoincrement())
+  name     String
+  role     String
+  email    String @unique
+  password String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Desa {
+  id                     Int      @id @default(autoincrement())
+  nama_desa              String
+  alamat_desa            String
+  tahun_pembentukan      Int
+  jumlah_hibah_diterima           Int
+  jumlah_dana_sekarang   Int
+  jumlah_anggota_awal    Int
+  jumlah_anggota_sekarang Int
+  kategori               String
+}
+
+
